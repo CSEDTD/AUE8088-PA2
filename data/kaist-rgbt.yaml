@@ -11,8 +11,18 @@
 path: datasets/kaist-rgbt
 train: # train files info (relative to 'path') 12,538 images
   - train-all-04.txt      # TODO: Please separate this file into train/val
+  # - train-v000false.txt
+  # - train-v001false.txt
+  # - train-v002false.txt
+  # - train-v0034false.txt
+  # - train-v005678false.txt
 val: # val files info (relative to 'path')  12,538 images
   - test-all-20.txt
+  # - train-v000true.txt
+  # - train-v001true.txt
+  # - train-v002true.txt
+  # - train-v0034true.txt
+  # - train-v005678true.txt
 test: # test files info (optional)
   - test-all-20.txt
 
