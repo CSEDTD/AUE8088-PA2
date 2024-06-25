@@ -642,8 +642,8 @@ def evaluate(test_annotation_file: str, user_submission_file: str, phase_codenam
     #     # + f'recall_all: {recall_all * 100:.2f}\n' \
     # print(msg)
 
-    return metrics
-    # return eval_result
+    # return metrics
+    return eval_result
 
 
 def draw_all(eval_results, filename='figure.jpg'):
@@ -660,7 +660,8 @@ def draw_all(eval_results, filename='figure.jpg'):
     fig, axes = plt.subplots(1, 3, figsize=(45, 10))
 
     methods = [res['all'].method for res in eval_results]
-    colors = [plt.cm.get_cmap('Paired')(ii)[:3] for ii in range(len(eval_results))]
+    # colors = [plt.cm.get_cmap('Paired')(ii)[:3] for ii in range(len(eval_results))]
+    colors = [plt.get_cmap('Paired')(ii)[:3] for ii in range(len(eval_results))]
 
     eval_results_all = [res['all'].eval for res in eval_results]
     KAISTPedEval.draw_figure(axes[0], eval_results_all, methods, colors)
@@ -693,4 +694,4 @@ if __name__ == "__main__":
 
     # Sort results by MR_all
     # results = sorted(results, key=lambda x: x['all'].summarize(0), reverse=True)
-    # draw_all(results, filename=args.evalFig)
+    draw_all(results, filename=args.evalFig)
